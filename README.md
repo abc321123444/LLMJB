@@ -8,7 +8,7 @@ generate jailbreaking embeddings embJS. Finally, we convert the embJS into text 
 </p>
 
 ## Dataset
-We group all the harmful behaviors within AdvBench into 9 distinct semantic categories, specifically, “Violence”, “Financial crimes”, “Property Crimes”, “Drug Crimes”, “Weapons Crimes”, “Cyber Crimes”, “Hate”,  “Suicide” and “Fake infomation”. At the same time, given that our method involves jailbreaking multimodal large language models, we provide up to thirty images which were retrieved from the Internet using the Google search engine for each class as initialization of the images during the jailbreak process.
+We group all the harmful behaviors within AdvBench into 9 distinct semantic categories, specifically, “Violence”, “Financial crimes”, “Property Crimes”, “Drug Crimes”, “Weapons Crimes”, “Cyber Crimes”, “Hate”,  “Suicide” and “Fake infomation”. At the same time, given that our method involves jailbreaking multimodal large language models, we provide up to twenty images which were retrieved from the Internet using the Google search engine for each class as initialization of the images during the jailbreak process.
 
 ## Getting Started
 
@@ -59,13 +59,3 @@ Then , run the following command to jailbreak LLM.
 ```
 python LLM_jb.py --cfg-path eval_configs/minigpt4_llama2_eval.yaml --gpu-id 0 --class_tag S1 --attack_power 128 
 ```
-
-## Acknowledgement
-
-+ [MiniGPT-4](https://github.com/Vision-CAIR/MiniGPT-4) This repository is built upon MiniGPT-4!
-
-+ [llm-attacks](https://github.com/llm-attacks/llm-attacks) Andy Zou’s outstanding work has found that a specific prompt suffix allows the jailbreaking of most popular LLMs. Don't forget to check this great open-source work if you don't know it before!
-
-+ [adversarial-attacks-pytorch](https://github.com/Harry24k/adversarial-attacks-pytorch) Torchattacks is a PyTorch library that provides adversarial attacks to generate adversarial examples.
-
-  
