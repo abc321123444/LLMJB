@@ -5,22 +5,22 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
 def mask_patch(image, patch_index, patch_size):
-    # 获取图像通道数、图像高度和图像宽度
+
     batch_size, channels, height, width = image.shape
 
     patch_num_per_row = height // patch_size
 
-    # 计算patch在图像中的位置
+
     patch_row = patch_index // patch_num_per_row
     patch_col = patch_index % patch_num_per_row
 
-    # 计算patch的起始和结束位置
+
     start_row = patch_row * patch_size
     end_row = start_row + patch_size
     start_col = patch_col * patch_size
     end_col = start_col + patch_size
 
-    # 将patch区域的像素值置为零
+
     image[:, :, start_row:end_row, start_col:end_col] = 0
 
     return image
